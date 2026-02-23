@@ -1,29 +1,34 @@
 # 📚 Personalized Book Recommender System
-**A Machine Learning project using Collaborative Filtering to suggest your next favorite read.**
+**An interactive Machine Learning web application built with Streamlit and Collaborative Filtering.**
 
 ---
 
-## 🚀 Overview
-This project is a web-based recommendation engine that suggests books based on user ratings and preferences. It utilizes a **Memory-Based Collaborative Filtering** approach to find patterns in user behavior and recommend titles with high similarity.
-
-
+## 🚀 Project Overview
+This project is a data-driven recommendation engine designed to help users discover new books based on their existing interests. Instead of simple popularity-based suggestions, this system uses **Memory-Based Collaborative Filtering** to find users with similar reading patterns and recommend titles they enjoyed.
 
 ## 🛠️ Tech Stack
 * **Language:** Python 3.10+
+* **Frontend/UI:** [Streamlit](https://streamlit.io/) (Interactive Web Interface)
 * **Machine Learning:** Scikit-Learn (Nearest Neighbors), NumPy, Pandas
-* **Web Framework:** Flask
-* **Environment:** Docker (Containerized for easy deployment)
-* **UI:** HTML/CSS (Customized Templates)
+* **DevOps:** Docker (Containerized for seamless deployment)
+* **Data Processing:** Pickle (for model & data persistence)
 
-## 📊 Dataset & Pipeline
-The system processes the **Book-Crossing Dataset**, involving:
-1.  **Data Cleaning:** Filtering users with >200 ratings and books with >50 ratings to ensure statistical significance.
-2.  **Feature Engineering:** Creating a Pivot Table where indexes are book titles and columns are users.
-3.  **Model:** Implementing **Nearest Neighbors (KNN)** with Cosine Similarity to calculate distances between vectors.
-4.  **Artifacts:** Exporting the trained model and data as `.pkl` files for real-time inference.
+## 📊 Data Engineering & ML Pipeline
+Based on the **Book-Crossing Dataset**, the project follows a rigorous pipeline:
+1.  **Data Cleaning:** Focused on high-quality interactions by filtering users with >200 ratings and books with >50 ratings.
+2.  **Vectorization:** Transformed raw rating data into a high-dimensional pivot table.
+3.  **Modeling:** Implemented an **Unsupervised Nearest Neighbors (KNN)** model with **Cosine Similarity** to calculate distances between book vectors.
+4.  **Inference:** Built a real-time recommendation function that retrieves the 5 closest neighbors for any given book title.
 
-## 💻 Installation & Usage
-Ensure you have Python installed on your system.
+## 📂 Repository Structure
+* `app.py`: The main Streamlit application script.
+* `artifacts/`: Contains pre-trained `.pkl` files (model, book names, pivot table).
+* `notebook/`: Jupyter notebooks showing the exploratory data analysis (EDA).
+* `requirements.txt`: List of necessary Python libraries.
+* `Dockerfile`: Configuration for building a Docker image of the app.
+
+## 💻 Local Installation
+Run this project on your machine with these steps:
 
 1. **Clone the repository:**
    ```bash
